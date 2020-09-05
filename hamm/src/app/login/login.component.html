@@ -1,0 +1,20 @@
+    <div class="container">
+        <mat-card>
+            <p>
+                <mat-form-field appearance="outline">
+                  <mat-label>Correo Electrónico</mat-label>
+                  <input matInput placeholder="Correo Electrónico"  [(ngModel)]="email">                                    
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="outline">
+                  <mat-label>Contraseña</mat-label>
+                  <input matInput placeholder="Contraseña" [(ngModel)]="password">                                    
+                </mat-form-field>
+              </p>
+              <button mat-raised-button color="primary" (click)="login()">Ingresar</button>
+        </mat-card>
+    </div>
+    
+
+
