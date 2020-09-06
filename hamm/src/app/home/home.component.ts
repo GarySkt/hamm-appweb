@@ -1,4 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+
+
+const itemList = gql`
+    query{
+      getItems{
+        name
+      }     
+    }
+`;
 
 @Component({
   selector: 'app-home',
@@ -7,9 +18,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apollo: Apollo) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.apollo.watchQuery<any>({
+      query:itemList
+    }).valueChanges.subscribe(({data, loading})=>{
+      console.log(loading);
+      console.log(data);
+    },(error)=>{
+      console.log(error);
+    }
+    )
+
   }
 
 }
