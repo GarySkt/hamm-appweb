@@ -7,6 +7,8 @@ const itemList = gql`
     query{
       getItems{
         name
+        percentage
+        amount
       }     
     }
 `;

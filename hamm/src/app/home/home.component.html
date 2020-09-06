@@ -1,4 +1,17 @@
-<h1>Cuentas</h1>
-<div *ngFor="let c of cuentas">    
-    <p>{{c.name}}</p>
+<div class="container">
+    <h1>Cuentas</h1>
+    <div *ngFor="let c of cuentas">    
+        <mat-card>
+            <mat-card-header>            
+                <mat-card-title>{{c.name}}</mat-card-title>
+                <mat-card-subtitle>{{c.percentage}}%</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <h3>S/. {{c.amount}}</h3>
+              </mat-card-content>
+        </mat-card>
+        
+    </div>
+    
+
 </div>
