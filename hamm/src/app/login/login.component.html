@@ -1,20 +1,30 @@
-    <div class="container">
-        <mat-card>
-            <p>
-                <mat-form-field appearance="outline">
-                  <mat-label>Correo Electrónico</mat-label>
-                  <input matInput placeholder="Correo Electrónico"  [(ngModel)]="email">                                    
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field appearance="outline">
-                  <mat-label>Contraseña</mat-label>
-                  <input matInput placeholder="Contraseña" [(ngModel)]="password">                                    
-                </mat-form-field>
-              </p>
-              <button mat-raised-button color="primary" (click)="login()">Ingresar</button>
-        </mat-card>
-    </div>
-    
-
-
+<div class="container">
+  <h4 class='mv3'>{{logIn ? 'Iniciar Sesión' : 'Registrarme'}}</h4>
+  <p *ngIf="!logIn">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre y Apellidos</mat-label>
+      <input matInput placeholder="Jhon Doe" [(ngModel)]="name" type="text">
+    </mat-form-field>
+  </p>
+  <p *ngIf="!logIn">
+    <mat-form-field appearance="outline">
+      <mat-label>Núnmero de Celular</mat-label>
+      <input matInput placeholder="987 654 321" [(ngModel)]="phone" type="phone">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Correo Electrónico</mat-label>
+      <input matInput placeholder="micorreo@mail.com" [(ngModel)]="email" type="email">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Contraseña</mat-label>
+      <input matInput placeholder="********" [(ngModel)]="password" type="password" autocomplete="false">
+    </mat-form-field>
+  </p>
+  <button mat-raised-button color="primary" (click)="login()">{{logIn ? 'INGRESAR' : 'CREAR CUENTA'}}</button>
+  <button mat-button color="primary" (click)="logIn = !logIn">
+    {{logIn ? 'Registrarme' : 'Ya tengo una cuenta'}}</button>
+</div>

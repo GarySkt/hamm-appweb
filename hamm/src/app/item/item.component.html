@@ -1,0 +1,36 @@
+
+<h1 mat-dialog-title>{{data.typeAction == 1 ? 'Agregar Ingreso' : 'Agregar Cuenta'}}</h1>
+<div mat-dialog-content *ngIf="data.typeAction == 1 ">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Detalle</mat-label>
+      <input matInput placeholder="Rapitinka" [(ngModel)]="detail" type="text" required>
+    </mat-form-field>
+  </p>
+   
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Monto</mat-label>
+      <input matInput placeholder="850" [(ngModel)]="amount" type="number" required>
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-content *ngIf="data.typeAction == 0 ">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Necesidades, ocio, ..." [(ngModel)]="name" type="text" required>
+    </mat-form-field>
+  </p>
+ 
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Porcentaje</mat-label>
+      <input matInput placeholder="55" [(ngModel)]="percentage" type="number" required>
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cerrar</button>
+    <button mat-button (click)="addAccount(data.typeAction)">Agregar</button>
+  </div>

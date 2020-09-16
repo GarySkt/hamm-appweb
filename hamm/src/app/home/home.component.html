@@ -1,6 +1,8 @@
 <div class="container">
-    <h1>Cuentas</h1>
-    <div *ngFor="let c of cuentas">    
+    <button mat-button color="primary" (click)="logOut()">Cerrar Sesión</button>
+<p>{{mensaje}}</p>
+    <h1>Cuentas</h1>    
+    <div *ngFor="let c of itemAccountContainer">    
         <mat-card>
             <mat-card-header>            
                 <mat-card-title>{{c.name}}</mat-card-title>
@@ -9,9 +11,12 @@
               <mat-card-content>
                 <h3>S/. {{c.amount}}</h3>
               </mat-card-content>
-        </mat-card>
-        
+        </mat-card>        
     </div>
-    
-
+    <button mat-mini-fab color="primary" (click)="openDialog(0)">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-mini-fab color="primary" (click)="openDialog(1)">
+        <mat-icon>arrow_circle_up</mat-icon>
+      </button>
 </div>
